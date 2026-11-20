@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de Agendamento do Salão de Festas do Edifício Residencial Parque Verde">
+    <title>Salão Fácil</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="./assets/img/SF.png" alt="ícone do sistema" class="icone">
+            <h1>Salão Fácil</h1>
+            <p id="subtitulo">Residencial Parque Verde</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#agendamento">Agendamento</a></li>
+                <li><a href="contato.html">Fale concosco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="banner">
+            <div>
+                <span id="shell">DISPONIBILIDADE EM TEMPO REAL</span>
+                <h2>Seu evento começa com uma data livre.</h2>
+                <p>Consulte o calendário, escolha o melhor horário e confirme o salão de festas em poucos minutos.</p>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <p>Pensado para tornar suas comemorações mais práticas e acolhedoras, o Salão de Festas oferece uma estrutura completa para receber seus convidados sem precisar sair do condomínio.</p>
+
+            <p>O que o espaço oferece:</p>
+
+            <ul>
+                <li>Ambiente principal: Salão amplo com climatização e iluminação dedicada.</li>
+                <li>Copa e apoio: Bancada, pia, geladeira/freezer e espaço para organização de buffet.</li>
+                <li>Mobiliário: Conjuntos de mesas e cadeiras disponíveis para montagem livre.</li>
+                <li>Infraestrutura: Banheiros exclusivos e acesso facilitado para convidados autorizados na portaria.</li>
+            </ul>
+        </section>
+
+        <section id="agendamento">
+            <form action="confirmacao.html" method="post">
+                <p>NOVA RESERVA</p>
+                <h2>Quando será a celebração?</h2>  
+
+                <fieldset class="seletor">
+                    <div class="card" id="data">
+                        <h3>ESCOLHA A DATA:</h3>
+                        <label for="data-agendamento" class="sr-only">Data do agendamento:</label>
+                        <input type="date" id="data-agendamento" name="data-agendamento" min="" required class="caixa">
+                    </div><br>
+
+                    <div class="card" id="horario">
+                        <h3>ESCOLHA O HORÁRIO:</h3>
+                        <label for="horário-agendamento-diurno" class="sr-only">Diurno: 10h-16h</label>
+                        <button type="button" id="horario-agendamento-diurno" class="botao-horario">
+                            <p>Diurno</p>
+                            <p>10h — 16h</p>
+                        </button>
+
+                        <label for="horario-agendamento-noturno" class="sr-only">Noturno: 18h à 00h</label>
+                        <button type="button" id="horario-agendamento-noturno" class="botao-horario">
+                            <p>Noturno</p>
+                            <p>18h — 00h</p>
+                        </button>
+                        <input type="hidden" name="horario" id="horario-selecionado">
+                    </div><br>
+
+                    <div class="card" id="informacoes">
+                        <label for="nome" id="label-nome">Nome do responsável</label><br>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required class="caixa"><br>
+
+                        <label for="apartamento" id="label-apartamento">Apartamento</label><br>
+                        <input type="text" id="apartamento" name="apartamento" placeholder="Ex.: 804 B" required class="caixa"><br>
+
+                        <label for="convidados" id="label-convidados">Convidados</label><br>
+                        <input type="number" id="convidados" name="convidados" placeholder="Até 80" min="10" max="80" required class="caixa"><br>
+
+                        <label for="tipo" id="label-tipo">Tipo de evento</label><br>
+                        <select name="tipo" id="tipo" class="caixa" required>
+                            <option value="aniversario">Aniversário</option>
+                            <option value="confraternizacao">Confraternização</option>
+                            <option value="evento infantil">Evento infantil</option>
+                            <option value="outro">Outro</option>
+                        </select><br>
+                        
+                        <label for="submit" class="sr-only">Confirmar reserva</label><br>
+                        <input type="submit" id="submit" name="submit" value="Confirmar reserva">
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p> 
+            <address> <abbr title="Residencial Parque Verde">Residencial Parque Verde</abbr>  - Q 100, Brasília - DF. CEP: 700000</address>
+        </p>
+    </footer>
+</body>
+</html>
