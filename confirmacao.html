@@ -9,23 +9,35 @@
     <script src="./assets/js/script-confirmacao.js" defer></script>
 </head>
 <body>
-    <header>
+    <header class="cabecalho">
         <div id="logo-titulo">
             <img src="./assets/img/SF.png" alt="ícone do sistema" class="icone">
             <h1>Salão Fácil</h1>
+            <p>Residencial Parque Verde</p>
         </div>
     </header>
 
-    <section id="confirmacao">
-        <main>
-            <p>Seu agendamento foi realizado com sucesso!</p>
-            <p>O salão estará reservado para o seu evento na data e horário marcados. Bom proveito!</p>
-            <div id="resumo-reserva"></div>
-            <p>Precisa de mais informações?</p> 
-            <a href="contato.html">Entre em contato conosco</a>
-            <a href="pagina.html">Voltar para o início</a>
-        </main>
-    </section>
+    <main>
+        <section id="confirmacao">
+            <div class="card-confirmacao">
+                <h2>Reserva confirmada</h2>
+                <p class="mensagem-destaque">Seu agendamento foi realizado com sucesso!</p>
+                <p class="mensagem-apoio">O salão estará reservado para o seu evento na data e horário marcados. Bom proveito!</p>
+
+                <div class="card-detalhes">
+                    <div id="resumo-reserva"></div>
+
+                    <div class="acoes-confirmacao">
+                        <p>Precisa de mais informações?</p>
+                        <div class="links-confirmacao">
+                            <a href="contato.html" class="link-secundario">Entre em contato conosco</a>
+                            <a href="pagina.html" class="link-primario">Voltar para o início</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p> 

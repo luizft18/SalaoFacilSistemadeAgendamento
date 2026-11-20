@@ -1,28 +1,308 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
+:root {
+  --cor-fundo-a: #f7f5f8e7;
+  --cor-fundo-b: oklch(87.2% 0.01 258.338);
+  --cor-texto: rgba(0, 0, 0, 0.719);
+  --cor-border: #ECECEA;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     width: 100%;
+    background-color: var(--cor-fundo-a);
 }
 
-header {
-    width: 100%;
-    min-height: 50px;
+.cabecalho {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 24px;
 }
 
 #logo-titulo {
-    display: flex;
-    gap: 5px;
+  grid-column: 1;
+  justify-self: start;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "icone titulo"
+    "icone subtitulo";
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 2px;
 }
 
-.icone {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+#logo-titulo .icone {
+  grid-area: icone;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 0px solid;
+  border-radius: 15px;
 }
 
-h1 {
-    font-size: 15px;
+#logo-titulo h1 {
+  grid-area: titulo;
+  margin: 0;
+  font-size: 15px;
+  color: var(--cor-texto);
+  align-self: end;
+}
+
+#logo-titulo p {
+  grid-area: subtitulo;
+  margin: 0;
+  font-size: 12px;
+  color: rgba(119, 119, 119, 0.911);
+  align-self: start;
+}
+
+main {
+  width: 100%;
+  min-height: calc(100vh - 180px);
+  box-sizing: border-box;
+  background-image: url("../img/salao_de_festas_4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 24px;
+}
+
+#confirmacao {
+  width: 100%;
+  max-width: 780px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card maior contendo todo o conteúdo da section */
+.card-confirmacao {
+  width: 100%;
+  background-color: #ffffff;
+  color: #1f2937;
+  border: 1px solid var(--cor-border);
+  border-radius: 30px;
+  padding: 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-confirmacao h2 {
+  margin: 0;
+  font-size: 32px;
+  color: var(--cor-texto);
+}
+
+.mensagem-destaque {
+  margin: 0;
+  color: #3A7C5C;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.mensagem-apoio {
+  margin: 0;
+  color: var(--cor-texto);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Card menor interno com informações do agendamento e links */
+.card-detalhes {
+  background-color: var(--cor-fundo-a);
+  border: 1px solid var(--cor-border);
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#resumo-reserva {
+  color: var(--cor-texto);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+#resumo-reserva p {
+  margin: 0 0 8px 0;
+}
+
+#resumo-reserva p:last-child {
+  margin-bottom: 0;
+}
+
+.acoes-confirmacao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--cor-border);
+}
+
+.acoes-confirmacao p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.links-confirmacao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.links-confirmacao a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.link-primario {
+  background-color: #3A7C5C;
+  color: #ffffff;
+}
+
+.link-primario:hover {
+  background-color: #2f5b43;
+}
+
+.link-secundario {
+  background-color: #ffffff;
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-border);
+}
+
+.link-secundario:hover {
+  background-color: var(--cor-fundo-b);
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 24px 16px;
+  }
+
+  .card-confirmacao {
+    padding: 20px;
+  }
+
+  .card-detalhes {
+    padding: 18px;
+  }
+
+  .links-confirmacao {
+    flex-direction: column;
+  }
+
+  .links-confirmacao a {
+    width: 100%;
+  }
+}
+
+.acoes-confirmacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Centraliza o bloco de texto e os links na horizontal */
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--cor-border);
+}
+
+.acoes-confirmacao p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cor-texto);
+  text-align: center;
+}
+
+.links-confirmacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* Centraliza os dois links lado a lado */
+  gap: 12px;
+}
+
+footer {
+  background-color: var(--cor-fundo-a);
+  border-top: 1px solid rgb(190, 190, 190);
+  width: 100%;
+  min-height: 100px;
+  box-sizing: border-box;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .cabecalho {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 12px 16px;
+  }
+
+  #logo-titulo {
+    grid-column: 1;
+    justify-self: center;
+  }
+
+  main {
+    padding: 24px 16px;
+    min-height: auto;
+  }
+
+  .card-confirmacao {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .card-confirmacao h2 {
+    font-size: 26px;
+  }
+
+  .card-detalhes {
+    padding: 18px;
+  }
+
+  .links-confirmacao {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .links-confirmacao a {
+    width: 100%;
+  }
+
+  footer {
+    padding: 32px 20px;
+    text-align: center;
+  }
 }

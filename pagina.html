@@ -14,7 +14,7 @@
             <img src="./assets/img/SF.png" alt="ícone do sistema" class="icone">
             <h1>Salão Fácil</h1>
             <p>Residencial Parque Verde</p>
-        </div>
+        </div> 
 
         <nav class="navegacao">
             <ul>
@@ -27,10 +27,10 @@
 
     <main>
         <section id="banner">
-            <div>
+            <div id="banner-conteudo">
                 <span id="shell">DISPONIBILIDADE EM TEMPO REAL</span>
-                <h2 id="slogan">Seu evento começa com uma data livre.</h2>
-                <p id="slogan-desc">Consulte o calendário, escolha o melhor horário e confirme o salão de festas em poucos minutos.</p>
+                <h2>Seu evento começa com uma data livre.</h2>
+                <p>Consulte o calendário, escolha o melhor horário e confirme o salão de festas em poucos minutos.</p>
             </div>
         </section>
 
@@ -40,10 +40,10 @@
             <p>O que o espaço oferece:</p>
 
             <ul>
-                <li>Ambiente principal: Salão amplo com climatização e iluminação dedicada.</li>
-                <li>Copa e apoio: Bancada, pia, geladeira/freezer e espaço para organização de buffet.</li>
-                <li>Mobiliário: Conjuntos de mesas e cadeiras disponíveis para montagem livre.</li>
-                <li>Infraestrutura: Banheiros exclusivos e acesso facilitado para convidados autorizados na portaria.</li>
+                <li>Ambiente principal: Salão amplo com climatização e iluminação dedicada;</li>
+                <li>Copa e apoio: Bancada, pia, geladeira/freezer e espaço para organização de buffet;</li>
+                <li>Mobiliário: Conjuntos de mesas e cadeiras disponíveis para montagem livre;</li>
+                <li>Infraestrutura: Banheiros exclusivos e acesso facilitado para convidados autorizados na portaria;</li>
             </ul>
         </section>
 
@@ -54,47 +54,68 @@
 
                 <fieldset class="seletor">
                     <div class="card" id="data">
-                        <h3>ESCOLHA A DATA:</h3>
+                        <h3>Escolha a data:</h3>
                         <label for="data-agendamento" class="sr-only">Data do agendamento:</label>
                         <input type="date" id="data-agendamento" name="data-agendamento" min="" required class="caixa">
                     </div><br>
 
                     <div class="card" id="horario">
-                        <h3>ESCOLHA O HORÁRIO:</h3>
-                        <label for="horário-agendamento-diurno" class="sr-only">Diurno: 10h-16h</label>
-                        <button type="button" id="horario-agendamento-diurno" class="botao-horario">
-                            <p>Diurno</p>
-                            <p>10h — 16h</p>
-                        </button>
+                        <h3>Escolha o horário:</h3>
 
-                        <label for="horario-agendamento-noturno" class="sr-only">Noturno: 18h à 00h</label>
-                        <button type="button" id="horario-agendamento-noturno" class="botao-horario">
-                            <p>Noturno</p>
-                            <p>18h — 00h</p>
-                        </button>
+                        <div class="opcoes-horario">
+                            <label for="horario-agendamento-diurno" class="sr-only">Diurno: 10h-16h</label>
+                            <button type="button" id="horario-agendamento-diurno" class="botao-horario">
+                            <div class="horario-texto">
+                                <p class="tempo-texto">◷ Diurno</p>
+                                <p class="tempo-dia-texto">10h — 16h</p>
+                            <div>
+                            </button>
+
+                            <label for="horario-agendamento-noturno" class="sr-only">Noturno: 18h à 00h</label>
+                            <button type="button" id="horario-agendamento-noturno" class="botao-horario">
+                            <div class="horario-texto">
+                                <p class="tempo-texto">◷ Noturno</p>
+                                <p class="tempo-dia-texto">18h — 00h</p>
+                            </div>
+                            </button>
+                        </div>
+
                         <input type="hidden" name="horario" id="horario-selecionado">
-                    </div><br>
+                    </div>
 
                     <div class="card" id="informacoes">
-                        <label for="nome" id="label-nome">Nome do responsável</label><br>
-                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required class="caixa"><br>
+                        <div class="campo-form campo-full">
+                            <label for="nome" id="label-nome">Nome do responsável</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required class="caixa">
+                        </div>
 
-                        <label for="apartamento" id="label-apartamento">Apartamento</label><br>
-                        <input type="text" id="apartamento" name="apartamento" placeholder="Ex.: 804 B" required class="caixa"><br>
+                        <div class="campo-form">
+                            <label for="apartamento" id="label-apartamento">Apartamento</label>
+                            <input type="text" id="apartamento" name="apartamento" placeholder="Ex.: 804 B" required class="caixa">
+                        </div>
 
-                        <label for="convidados" id="label-convidados">Convidados</label><br>
-                        <input type="number" id="convidados" name="convidados" placeholder="Até 80" min="10" max="80" required class="caixa"><br>
+                        <div class="campo-form">
+                            <label for="convidados" id="label-convidados">Convidados</label>
+                            <input type="number" id="convidados" name="convidados" placeholder="Até 80" min="10" max="80" required class="caixa">
+                        </div>
 
-                        <label for="tipo" id="label-tipo">Tipo de evento</label><br>
-                        <select name="tipo" id="tipo" class="caixa" required>
+                        <div class="campo-form campo-full">
+                            <label for="tipo" id="label-tipo">Tipo de evento</label>
+                            <select name="tipo" id="tipo" class="caixa" required>
+                            <option value="" disabled selected>Selecione uma opção</option>
                             <option value="aniversario">Aniversário</option>
                             <option value="confraternizacao">Confraternização</option>
                             <option value="evento infantil">Evento infantil</option>
                             <option value="outro">Outro</option>
-                        </select><br>
-                        
-                        <label for="submit" class="sr-only">Confirmar reserva</label><br>
-                        <input type="submit" id="submit" name="submit" value="Confirmar reserva">
+                            </select>
+                        </div>
+
+                        <div class="campo-form campo-full">
+                            <label for="submit" class="sr-only">Confirmar reserva</label>
+                            <input type="submit" id="submit" name="submit" value="Confirmar reserva">
+                        </div>
+
+                        <p>⛉ Confirmação imediata e dados protegidos</p>
                     </div>
                 </fieldset>
             </form>
