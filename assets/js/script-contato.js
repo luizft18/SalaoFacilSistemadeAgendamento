@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form) return;
 
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Impede o recarregamento/navegação padrão da página
+    event.preventDefault();
 
     if (caixaTexto) {
       caixaTexto.value = "";

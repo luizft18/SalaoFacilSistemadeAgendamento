@@ -86,7 +86,6 @@ main {
   justify-content: center;
 }
 
-/* Card maior contendo todo o conteúdo da section */
 .card-confirmacao {
   width: 100%;
   background-color: #ffffff;
@@ -121,7 +120,6 @@ main {
   line-height: 1.5;
 }
 
-/* Card menor interno com informações do agendamento e links */
 .card-detalhes {
   background-color: var(--cor-fundo-a);
   border: 1px solid var(--cor-border);
@@ -226,7 +224,7 @@ main {
 .acoes-confirmacao {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* Centraliza o bloco de texto e os links na horizontal */
+  align-items: center;     
   gap: 12px;
   padding-top: 16px;
   border-top: 1px solid var(--cor-border);
@@ -243,7 +241,7 @@ main {
 .links-confirmacao {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* Centraliza os dois links lado a lado */
+  justify-content: center;
   gap: 12px;
 }
 

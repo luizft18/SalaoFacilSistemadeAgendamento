@@ -1,4 +1,3 @@
-//armazenamento dos dados:
 const CHAVE_STORAGE = "salao_facil_reservas";
 
 const form = document.querySelector("#agendamento form");
@@ -153,7 +152,7 @@ form.addEventListener("submit", (event) => {
   btnDiurno.classList.remove("selecionado");
   btnNoturno.classList.remove("selecionado");
 
-  // Redireciona para a página de confirmação definida no action do <form>
+  
   const destinoConfirmacao = form.getAttribute("action") || "confirmacao.html";
   window.location.href = destinoConfirmacao;
 });
